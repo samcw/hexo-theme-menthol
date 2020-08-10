@@ -1,0 +1,37 @@
+.archive {
+  padding: 10px;
+}
+.archive-title {
+  position: relative;
+  color: #2c3e50;
+}
+.archive-title:before {
+  content: '[ ';
+  color: aquamarine;
+}
+.archive-title:after {
+  content: ' ]';
+  color: aquamarine;
+}
+.archive-link {
+  text-decoration: none;
+  color: #2c3e50;
+  position: relative;
+}
+.archive-link:after {
+  content: "";
+  position: absolute;
+  background-color: aquamarine;
+  left: 0%;
+  right: 100%;
+  z-index: -1;
+  top: 80%;
+  bottom: 0%;
+  transition: right 200ms cubic-bezier(0, .8, .13, 1);
+}
+.archive-link:hover:after {
+  right: 0%;
+}
+.archive-content {
+  padding-left: 2em;
+}

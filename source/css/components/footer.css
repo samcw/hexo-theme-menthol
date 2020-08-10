@@ -1,0 +1,28 @@
+:root {
+  --footer-height: 80px;
+  --font-color: grey;
+}
+.footer {
+  height: var(--footer-height);
+  border-top: 1px solid #ece9e9;
+  margin-top: 10px;
+  font-family: 'Varela Round', sans-serif;
+  color: var(--font-color);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.footer-info a {
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: var(--font-color);
+}

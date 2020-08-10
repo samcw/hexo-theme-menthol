@@ -1,0 +1,10 @@
+<footer class="footer">
+  <p class="footer-info">
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/samcw" target="_blank"><%- config.theme %> </a>
+  </p>
+  <% if (config.author){ %>
+    <p class="footer-info">&copy; <%= new Date().getFullYear() %> <%= config.author %></p>
+  <% } else { %>
+    <p>&copy; <%= new Date().getFullYear() %> <%= config.title %></p>
+  <% } %>
+</footer>

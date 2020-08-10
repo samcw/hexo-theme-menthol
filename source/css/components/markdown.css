@@ -1,0 +1,124 @@
+.markdown-body {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Noto Serif SC', sans-serif;
+}
+.markdown-body h1 {
+  font-size: 2em;
+}
+.markdown-body code {
+  font-family: 'Roboto Mono', monospace;
+}
+.markdown-body blockquote {
+  margin: 1em 0 1em 0;
+  padding: 0.2em 1em 0.2em 3em;
+  border-left: 4px solid #42b983;
+  background-color: rgb(247, 245, 245);
+}
+.markdown-body hr {
+  border: none;
+	border-bottom: 1px solid rgb(240, 240, 240);
+	margin: 2em 0;
+}
+.markdown-body code {
+  color: #d63200;
+  font-size: 0.85em;
+  background-color: rgb(247, 245, 245);
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+.markdown-body a {
+  text-decoration: none;
+  color: #42b983;
+  cursor: pointer;
+}
+.markdown-body figure {
+  margin: 0;
+}
+.markdown-body figure table {
+  table-layout: fixed;
+  width: 100%;
+}
+.markdown-body figure code {
+  padding: 20px;
+  color: #2c3e50;
+}
+.markdown-body pre code {
+  padding: 20px;
+  display: block;
+  overflow-x: auto;
+  color: #2c3e50;
+}
+.markdown-body img {
+  width: 100%;
+}
+.markdown-body > table {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+	border-collapse: collapse;
+	display: table;
+	empty-cells: hide;
+	margin: -1px 0 1.3125em;
+	padding: 0;
+  table-layout: fixed;
+  width: 100%;
+  overflow: auto;
+}
+.markdown-body caption {
+	display: table-caption;
+	font-weight: 700
+}
+
+.markdown-body col {
+	display: table-column
+}
+
+.markdown-body colgroup {
+	display: table-column-group
+}
+
+.markdown-body tbody {
+	display: table-row-group
+}
+
+.markdown-body tfoot {
+	display: table-footer-group
+}
+
+.markdown-body thead {
+	display: table-header-group
+}
+
+.markdown-body td, th {
+	display: table-cell
+}
+
+.markdown-body tr {
+	display: table-row
+}
+
+.markdown-body > table th {
+	font-size: 1.1em;
+	line-height: 1.3;
+	padding: 0.5em 0 0.5em 0;
+}
+.markdown-body > table td {
+	font-size: 1.1em;
+	line-height: 1.3;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.markdown-body > table thead {
+	background: rgba(0, 0, 0, 0.15);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.markdown-body > table tbody {
+	background: rgba(0, 0, 0, 0.05)
+}
+
+.markdown-body > table tfoot {
+	background: rgba(0, 0, 0, 0.15);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 1px solid rgba(0, 0, 0, 0.2)
+}

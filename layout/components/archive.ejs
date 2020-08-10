@@ -1,0 +1,28 @@
+<%
+  var title = '';
+  if (page.category) title = page.category;
+  if (page.tag) title = page.tag;
+  if (page.archive){
+    if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+    else title = __('Archives');
+  }
+%>
+
+<article class="archive">
+  <h2 class="archive-title"><%= title %></h2>
+  <div class="archive-content">
+    <% page.posts.forEach(item => { %>
+     <div>
+       <h3>
+         <a href="<%- url_for(item.path) %>" class="archive-link">
+          <%- item.title %> 
+         </a>
+       </h3>
+       <time class="article-date" datetime="<%= item.date.toDate().toISOString() %>">
+        <%= item.date.format(config.date_format) %>
+      </time>
+     </div>
+    <% }) %>
+  </div>
+  <%- partial('pagination') %>
+</article>

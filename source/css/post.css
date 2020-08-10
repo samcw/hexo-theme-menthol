@@ -1,0 +1,24 @@
+.post {
+  min-height: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.post-title {
+  position: relative;
+  color: #2c3e50;
+}
+.post-title:after {
+  content: "";
+  position: absolute;
+  background-color: aquamarine;
+  left: 0%;
+  right: 0%;
+  z-index: -1;
+  top: 80%;
+  bottom: 0%;
+}
+.post-date {
+  color: #7f8c8d;
+  font-size: 16px;
+}

@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.pagination-next {
+  box-sizing: border-box;
+  height: 32px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 4px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border-bottom: 4px solid #3aa373;
+  font-size: 14px;
+  color: white;
+  background-color: #4fc08d;
+  transition: background-color 200ms linear;
+}
+.pagination-next:hover {
+  background-color: #61ce9d;
+}

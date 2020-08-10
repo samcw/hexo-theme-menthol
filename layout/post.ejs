@@ -1,0 +1,13 @@
+<article class="post">
+  <h2>
+    <span class="post-title">
+      <%- page.title %>
+    </span>
+  </h2>
+  <time class="article-date" datetime="<%= page.date.toDate().toISOString() %>">
+    <%= page.date.format(config.date_format) %>
+  </time>
+  <div class="markdown-body">
+    <%- page.content %> 
+  </div>
+</article>

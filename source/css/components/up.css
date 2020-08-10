@@ -1,0 +1,17 @@
+.up-btn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: opacity 200ms linear ;
+}
+.up-btn:hover {
+  cursor: pointer;
+}
+.showBtn {
+  opacity: 1;
+}
+.hideBtn {
+  opacity: 0;
+}

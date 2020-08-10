@@ -1,0 +1,6 @@
+<% if (page.posts && page.posts.length !== 0) { %>
+  <% page.posts.forEach(element => { %>
+    <%- partial('components/article', {item: element}) %>
+  <% }) %>
+<% } %>
+<%- partial('components/pagination') %>

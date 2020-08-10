@@ -1,0 +1,38 @@
+<article class="home-article">
+  <h2>
+    <a href="<%- url_for(item.path) %>" class="article-title">
+      <%- item.title %>
+    </a>
+  </h2>
+  <time class="article-date" datetime="<%= item.date.toDate().toISOString() %>">
+    <%= item.date.format(config.date_format) %>
+  </time>
+  <p class="article-excerpt">
+    <%- item.excerpt %>
+  </p>
+  <% if (item.img) { %>
+   <div class="article-img">
+    <img src="<%- item.img %> " alt="article-img">
+   </div>
+  <% } %>
+  <% if (item.tags || item.categories) { %>
+    <div class="article-bottom">
+      <% if (item.categories && item.categories.length !== 0) { %>
+        <img src="<%- url_for('image/category.png') %>" alt="category" class="article-bottom-category-img">
+        <% item.categories.forEach(category => { %>
+         <a href="<%- url_for(category.path) %>" class="article-bottom-tags-link"><%- category.name %> </a>
+        <% }) %>
+      <% } %>
+      <% if (item.tags && item.tags.length !== 0) { %>
+        <img src="<%- url_for('image/tags.png') %>" alt="tags" class="article-bottom-tags-img">
+        <% item.tags.forEach(tag => { %>
+         <a href="<%- url_for(tag.path) %>" class="article-bottom-tags-link"> # <%- tag.name %> </a>
+        <% }) %>
+      <% } %>
+      <div class="test"></div>
+    </div>
+  <% } %>
+  <div class="article-divider">
+    <div></div>
+  </div>
+</article>

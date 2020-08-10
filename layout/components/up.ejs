@@ -1,0 +1,42 @@
+<img src="<%- url_for('image/up.png') %>" alt="up" class="up-btn showBtn" id="backToTop">
+<script>
+  (function(){
+    let backTop = document.getElementById('backToTop');
+    let top = document.body.scrollTop || document.documentElement.scrollTop;
+    if(top > document.body.clientHeight && backTop.className == "up-btn hideBtn"){
+      backTop.className = "up-btn showBtn";
+    } else if (top <= document.body.clientHeight && backTop.className == "up-btn showBtn"){
+      backTop.className = "up-btn hideBtn";
+    }
+    // 监听滚动
+    window.addEventListener('scroll', () => {
+      let top = document.body.scrollTop || document.documentElement.scrollTop;
+      if(top > document.body.clientHeight && backTop.className == "up-btn hideBtn"){
+        backTop.className = "up-btn showBtn";
+      } else if (top <= document.body.clientHeight && backTop.className == "up-btn showBtn"){
+        backTop.className = "up-btn hideBtn";
+      }
+    })
+    // 为按钮绑定点击事件
+    backTop.addEventListener('click',() => {
+      function move(){
+        let top = document.body.scrollTop || document.documentElement.scrollTop;
+        // 当离顶部还有10的时候直接跳回
+        if(top < 10){
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
+          return false;
+        // 否则每次回到当前离顶部距离的9/10处
+        }else{
+          document.body.scrollTop = document.documentElement.scrollTop -= top / 10;
+          return true;
+        }
+      }
+      // 使用requestAnimationFrame做一个缓冲回到顶部
+      requestAnimationFrame(function fn(){
+        if(move()){
+          requestAnimationFrame(fn);
+        }   
+      })
+    })
+  })()
+</script>
