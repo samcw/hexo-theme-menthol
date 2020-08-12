@@ -1,28 +1,41 @@
 <%
   var title = '';
-  if (page.category) title = page.category;
-  if (page.tag) title = page.tag;
   if (page.archive){
     if (page.year) title = page.year + (page.month ? '/' + page.month : '');
     else title = __('Archives');
   }
+  var items = new Map();
+  var date = site.posts.data.forEach(item => {
+    var dateItem = item.date.format(config.date_format).slice(0, 4);
+    if (!items.has(dateItem)) items.set(dateItem, 1); 
+  });
+  // date.sort((a, b) => parseInt(b) - parseInt(a););
 %>
 
 <article class="archive">
-  <h2 class="archive-title"><%= title %></h2>
-  <div class="archive-content">
-    <% page.posts.forEach(item => { %>
-     <div>
-       <h3>
-         <a href="<%- url_for(item.path) %>" class="archive-link">
-          <%- item.title %> 
-         </a>
-       </h3>
-       <time class="article-date" datetime="<%= item.date.toDate().toISOString() %>">
-        <%= item.date.format(config.date_format) %>
-      </time>
-     </div>
-    <% }) %>
+  <div class="archive-main">
+    <div class="archive-aside">
+      <h2 class="archive-title"><%= title %></h2>
+      <aside>
+        <% items.forEach((value, key) => { %>
+         <ul><a href="<%- url_for(`archives/${key}`)%>"><%- key %> </a></ul>
+        <% }) %>
+      </aside>
+    </div>
+    <div class="archive-content">
+      <% page.posts.forEach(item => { %>
+       <div>
+         <h3>
+           <a href="<%- url_for(item.path) %>" class="archive-link">
+            <%- item.title %> 
+           </a>
+         </h3>
+         <time class="article-date" datetime="<%= item.date.toDate().toISOString() %>">
+          <%= item.date.format(config.date_format) %>
+        </time>
+       </div>
+      <% }) %>
+    </div>
   </div>
   <%- partial('pagination') %>
 </article>

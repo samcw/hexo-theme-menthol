@@ -13,6 +13,13 @@
   content: ' ]';
   color: aquamarine;
 }
+.archive-main {
+  display: flex;
+  flex-direction: row;
+}
+.archive-aside {
+  flex: 0 1 100px;
+}
 .archive-link {
   text-decoration: none;
   color: #2c3e50;
@@ -34,4 +41,19 @@
 }
 .archive-content {
   padding-left: 2em;
+  flex-grow: 1;
+  flex-shrink: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.archive-aside {
+  overflow: auto;
+}
+.archive-aside ul {
+  margin-top: 20px;
+}
+.archive-aside ul a {
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  color: #2c3e50;
 }
